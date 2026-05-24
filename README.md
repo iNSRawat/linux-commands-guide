@@ -1,6 +1,6 @@
-# Ubuntu Commands Guide 🐧
+# Linux Commands Guide 🐧
 
-A comprehensive guide to essential Ubuntu commands, organized by skill level and use case. Perfect for beginners learning Linux on WSL or native Ubuntu, and experienced users looking for quick reference.
+A comprehensive guide to Linux commands for **Ubuntu** and **Fedora**, organized by skill level and use case. Perfect for beginners learning Linux on WSL or native installations, and experienced users looking for quick reference.
 
 ## 📚 Table of Contents
 
@@ -16,6 +16,7 @@ A comprehensive guide to essential Ubuntu commands, organized by skill level and
 
 This repository contains:
 - Organized command documentation from beginner to advanced levels
+- Ubuntu (apt) and Fedora (dnf) package management guides
 - Complete Docker & WSL2 setup and commands
 - Practical shell scripts for common tasks
 - Real-world examples and use cases
@@ -23,23 +24,30 @@ This repository contains:
 
 ### Prerequisites
 
-- Ubuntu 20.04 LTS or later (also works on WSL2 on Windows)
+- Ubuntu 20.04 LTS or later / Fedora 38 or later (also works on WSL2 on Windows)
 - Basic familiarity with terminal/command line
 - Text editor (vim, nano, or VS Code)
 
 ## 📁 Repository Structure
 
 ```
-ubuntu-commands-guide/
+linux-commands-guide/
 ├── README.md
 ├── docs/
-│   ├── 01-beginner-commands.md
-│   ├── 02-intermediate-commands.md
-│   ├── 03-advanced-commands.md
-│   ├── 04-data-science-commands.md
-│   ├── 05-git-github-commands.md
-│   ├── 06-docker-commands.md       ← NEW
-│   └── quick-reference.md
+│   ├── ubuntu/
+│   │   ├── 01-beginner-commands.md
+│   │   ├── 02-intermediate-commands.md
+│   │   ├── 03-advanced-commands.md
+│   │   ├── 04-data-science-commands.md
+│   │   ├── 05-git-github-commands.md
+│   │   ├── 06-docker-commands.md
+│   │   └── quick-reference.md
+│   └── fedora/
+│       ├── 01-fedora-basics.md
+│       ├── 02-fedora-package-management.md
+│       ├── 03-fedora-system-services.md
+│       ├── 04-fedora-networking.md
+│       └── fedora-quick-reference.md
 ├── scripts/
 │   ├── setup-aliases.sh
 │   ├── install-ds-stack.sh
@@ -56,70 +64,87 @@ ubuntu-commands-guide/
 
 ## 📖 Documentation
 
-### Command Categories
+### 🟠 Ubuntu Commands
 
-1. **[Beginner Commands](docs/01-beginner-commands.md)**
-   - File and directory operations
+1. **[Beginner Commands](docs/ubuntu/01-beginner-commands.md)**
+   - Navigation, file/directory operations
    - Basic system commands (echo, clear, history, sudo)
    - Text viewing and editing
-   - Package management basics
+   - Package management basics (apt)
    - WSL-specific commands & keyboard shortcuts
 
-2. **[Intermediate Commands](docs/02-intermediate-commands.md)**
+2. **[Intermediate Commands](docs/ubuntu/02-intermediate-commands.md)**
    - Process management
    - Permissions and ownership
    - Network commands (ssh, scp, curl, wget)
    - System monitoring
    - Aliases, environment variables, tmux/screen, lsof
 
-3. **[Advanced Commands](docs/03-advanced-commands.md)**
+3. **[Advanced Commands](docs/ubuntu/03-advanced-commands.md)**
    - Shell scripting (functions, error handling)
    - System administration & journalctl logs
    - Advanced find, awk, pipes
    - Disk usage & cleanup
 
-4. **[Data Science Commands](docs/04-data-science-commands.md)**
+4. **[Data Science Commands](docs/ubuntu/04-data-science-commands.md)**
    - Python environment setup (System Python + venv)
    - Virtual environment management
-   - Core DS library installation (numpy, pandas, sklearn, xgboost, streamlit)
+   - Core DS library installation
    - Jupyter notebook setup
    - Docker for data science
 
-5. **[Git & GitHub Commands](docs/05-git-github-commands.md)**
+5. **[Git & GitHub Commands](docs/ubuntu/05-git-github-commands.md)**
    - Repository management
    - Branching and merging
    - Remote operations
    - git stash, tags, .gitignore templates
-   - SSH troubleshooting & DS workflow
 
-6. **[Docker Commands](docs/06-docker-commands.md)** ✨ New
+6. **[Docker Commands](docs/ubuntu/06-docker-commands.md)**
    - Docker Engine installation on Ubuntu/WSL2
-   - Container management (run, stop, rm, exec, logs)
-   - Image commands (pull, build, push, tag)
-   - Dockerfile essentials with Streamlit/DS example
-   - Docker Compose setup
-   - Volumes, networking, cleanup
-   - Common DS/ML Docker Hub images
+   - Container & image management
+   - Docker Compose, volumes, networking
+
+7. **[Quick Reference](docs/ubuntu/quick-reference.md)**
+
+### 🔵 Fedora Commands
+
+1. **[Fedora Basics](docs/fedora/01-fedora-basics.md)**
+   - Navigation, file/directory operations
+   - System information, users
+   - Keyboard shortcuts & terminal tips
+
+2. **[Fedora Package Management (dnf)](docs/fedora/02-fedora-package-management.md)**
+   - dnf install, remove, update, search, info
+   - dnf history & rollback
+   - RPM Fusion setup
+   - Flatpak basics
+
+3. **[Fedora System Services](docs/fedora/03-fedora-system-services.md)**
+   - systemctl (start/stop/enable/disable)
+   - journalctl logs
+   - firewalld & SELinux basics
+
+4. **[Fedora Networking](docs/fedora/04-fedora-networking.md)**
+   - nmcli, ip, ping, curl, wget
+   - SSH setup on Fedora
+
+5. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
 
 ## 🛠️ Scripts
 
 ### Available Scripts
 - **setup-aliases.sh**: Set up useful bash aliases for productivity
-- **install-ds-stack.sh**: Install complete data science stack (Python, Jupyter, pandas, etc.)
-- **backup-script.sh**: Automated backup script for important directories
+- **install-ds-stack.sh**: Install complete data science stack
+- **backup-script.sh**: Automated backup script
 
 ### Usage
 ```bash
-# Make scripts executable
 chmod +x scripts/*.sh
-
-# Run a script
 ./scripts/setup-aliases.sh
 ```
 
 ## 💡 Examples
 
-Practical examples for common tasks:
 - **batch-rename.sh**: Rename multiple files based on patterns
 - **csv-processor.sh**: Process CSV files with command-line tools
 - **git-workflow.sh**: Common Git workflows automated
@@ -128,37 +153,37 @@ Practical examples for common tasks:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-For major changes:
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 Quick Reference
-
-For a quick command reference, see [quick-reference.md](docs/quick-reference.md)
-
-Includes cheat sheets for:
-- Navigation, file ops, permissions, networking
-- WSL-specific commands
-- Docker quick reference table
-- tmux keyboard shortcuts
-- Useful one-liners for data science
-
 ## 🎯 Use Cases
 
 This guide is perfect for:
-- Data science students and professionals using WSL2/Ubuntu
+- Data science students using WSL2/Ubuntu or Fedora
 - Developers containerizing apps with Docker
-- System administrators
+- System administrators managing Ubuntu/Fedora servers
 - Anyone learning Linux command line from scratch
 
-### Common update command
+### Quick update commands
 
+**Ubuntu:**
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 ```
+
+**Fedora:**
+```bash
+sudo dnf upgrade --refresh -y
+```
+
+## 🗺️ Resources
+
+- [Linux Roadmap](https://roadmap.sh/linux) - A structured roadmap to learn Linux
+- [Ubuntu Documentation](https://help.ubuntu.com/)
+- [Fedora Documentation](https://docs.fedoraproject.org/)
 
 ## 📄 License
 
@@ -166,16 +191,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👤 Author
 
-**iNSRawat**
-- GitHub: [@iNSRawat](https://github.com/iNSRawat)
+**iNSRawat** - GitHub: [@iNSRawat](https://github.com/iNSRawat)
 
 ## ⭐ Show Your Support
 
 Give a ⭐️ if this project helped you!
 
-## 🗺️ Resources
-
-- [Linux Roadmap](https://roadmap.sh/linux) - A structured roadmap to learn Linux step by step
-
 ---
-*Last Updated: March 2026*
+*Last Updated: May 2026*
