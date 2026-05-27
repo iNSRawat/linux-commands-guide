@@ -1,11 +1,3 @@
-export const title = "Fedora 44 Post Install Guide"
-export const description = "Everything I do after a fresh Fedora 44 install — DNF tweaks, RPM Fusion, NVIDIA drivers, Docker, NetBird, and more, including the release-day gotchas I hit along the way."
-export const date = "2026-05-02"
-export const authors = ["Brandon Hopkins"]
-export const categories = ["Guides"]
-export const tags = ["Fedora", "Linux", "Guides"]
-export const cover = "/docs-static/img/2026/05/fedora-44-post-install-guide/cover.jpg"
-
 So I just installed Fedora 44 on my main desktop and figured I'd put together a written version of everything I do after a fresh install. This is the same workflow I use whether I'm setting up a new workstation or rebuilding after a reinstall, leaning a little toward what a homelab user would want, but most of this applies to anyone running Fedora as a daily driver.
 
 Quick heads up before we dive in. I generally recommend waiting a week or two after a major Fedora release before updating. Small hiccups on day-zero releases get caught and patched fast, and you skip the friction. If you're new to Linux and not yet comfortable troubleshooting, give it a couple of weeks before jumping on a fresh major release. I'm doing it now because I'm making content about it and I'm comfortable troubleshooting. Just keep that in mind.
@@ -30,7 +22,7 @@ sudo nano /etc/dnf/dnf.conf
 
 Drop these in under the `[main]` section:
 
-```
+```ini
 fastestmirror=True
 max_parallel_downloads=10
 defaultyes=True
@@ -43,7 +35,7 @@ Real quick on what each of these does. `fastestmirror=True` picks the fastest av
 
 Before doing anything else, make sure everything is up to date. You can either go into the software center and click update, or do it from the terminal:
 
-```
+```bash
 sudo dnf -y update
 ```
 
@@ -55,19 +47,19 @@ Fedora ships with a lot of free and non-free packages disabled by default for li
 
 Go ahead and paste this in to enable both the free and non-free repos:
 
-```
+```bash
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 ```
 
 Now do note that as of this writing, the Fedora 44 RPM Fusion release package has a packaging bug where it enables the Rawhide repo (which is for Fedora development, not 44) and disables the proper Fedora 44 free repo. If you skip this next step, you'll hit cryptic glibc errors when you try to install codecs or ffmpeg in a minute. Run a quick sanity check:
 
-```
+```bash
 sudo dnf repolist --all | grep -i fusion
 ```
 
 If you see `rpmfusion-free-rawhide` as enabled, or `rpmfusion-free` as disabled, fix it with these three commands:
 
-```
+```bash
 sudo dnf config-manager setopt rpmfusion-free.enabled=1
 sudo dnf config-manager setopt rpmfusion-free-updates.enabled=1
 sudo dnf config-manager setopt rpmfusion-free-rawhide.enabled=0
@@ -77,7 +69,7 @@ This is exactly the kind of release-day gotcha I mentioned earlier. Hit it on tw
 
 Now here's the part most guides skip. Just enabling RPM Fusion doesn't actually swap out the crippled `ffmpeg-free` package that Fedora ships with. You have to do that explicitly:
 
-```
+```bash
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 ```
 
