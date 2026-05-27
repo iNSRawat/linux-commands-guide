@@ -56,6 +56,26 @@ sudo firewall-cmd --add-service=https --permanent
 sudo firewall-cmd --list-services    # List allowed services
 ```
 
+## SSH Configuration & Remote Access
+
+Fedora uses OpenSSH for remote connection management.
+
+### Key Management
+* `ssh-keygen -t ed25519 -C "email@example.com"` - Generate a new secure SSH key pair.
+* `ssh-copy-id -i ~/.ssh/id_ed25519.pub user@remote_host` - Copy public SSH key to a remote host (enables passwordless login).
+* `ssh user@remote_host` - Connect to a remote server.
+
+### Securing OpenSSH Daemon
+The main SSH daemon configuration file is `/etc/ssh/sshd_config`. To secure SSH, you can modify:
+* `PasswordAuthentication no` - Disable password-based logins (require SSH keys).
+* `PermitRootLogin no` - Disable root login.
+* `Port 2222` - Change default port to reduce scan noise.
+
+Apply changes by restarting the service:
+```bash
+sudo systemctl restart sshd
+```
+
 ## Testing & Diagnostics
 
 ### Connection Testing
@@ -81,4 +101,4 @@ host google.com          # Quick DNS query
 
 ---
 
-**Previous**: [System Services](03-fedora-system-services.md) | **Next**: [Quick Reference](fedora-quick-reference.md)
+**Previous**: [System Services](03-fedora-system-services.md) | **Next**: [System Commands Guide](05-fedora-system-commands-guide.md)

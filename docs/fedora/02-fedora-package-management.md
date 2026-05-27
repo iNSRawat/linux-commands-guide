@@ -92,7 +92,9 @@ rpm -qi package              # Query info
 ### Development Tools
 ```bash
 sudo dnf group install "Development Tools"
+sudo dnf groupinstall "C Development Tools and Libraries" # Essential libraries for compiling C projects
 sudo dnf install gcc gcc-c++ make cmake
+sudo dnf install kernel-devel kernel-headers              # Necessary for kernel modules and drivers
 sudo dnf install git curl wget
 ```
 

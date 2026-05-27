@@ -47,6 +47,7 @@ linux-commands-guide/
 │       ├── 02-fedora-package-management.md
 │       ├── 03-fedora-system-services.md
 │       ├── 04-fedora-networking.md
+│       ├── 05-fedora-system-commands-guide.md
 │       └── fedora-quick-reference.md
 ├── scripts/
 │   ├── setup-aliases.sh
@@ -128,7 +129,11 @@ linux-commands-guide/
    - nmcli, ip, ping, curl, wget
    - SSH setup on Fedora
 
-5. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
+5. **[Fedora System Commands Guide](docs/fedora/05-fedora-system-commands-guide.md)**
+   - Package management (dnf), systemctl, journalctl
+   - System info, networking, security & firewall (firewalld, SELinux)
+
+6. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
 
 ## 🛠️ Scripts
 
