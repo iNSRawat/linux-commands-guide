@@ -82,4 +82,4 @@ top                              # Process viewer
 
 ---
 
-**Previous**: [System Commands Guide](05-fedora-system-commands-guide.md)
+**Previous**: [Post Install Guide](06-fedora-44-post-install-guide.md)

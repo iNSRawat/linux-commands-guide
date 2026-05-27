@@ -48,6 +48,7 @@ linux-commands-guide/
 │       ├── 03-fedora-system-services.md
 │       ├── 04-fedora-networking.md
 │       ├── 05-fedora-system-commands-guide.md
+│       ├── 06-fedora-44-post-install-guide.md
 │       └── fedora-quick-reference.md
 ├── scripts/
 │   ├── setup-aliases.sh
@@ -133,7 +134,11 @@ linux-commands-guide/
    - Package management (dnf), systemctl, journalctl
    - System info, networking, security & firewall (firewalld, SELinux)
 
-6. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
+6. **[Fedora 44 Post Install Guide](docs/fedora/06-fedora-44-post-install-guide.md)**
+   - Post-install setup, DNF configurations, multimedia codecs
+   - NVIDIA drivers, Docker, NetBird, SMB shares, GNOME Tweaks & extensions
+
+7. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
 
 ## 🛠️ Scripts
 

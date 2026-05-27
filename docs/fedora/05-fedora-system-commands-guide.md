@@ -103,4 +103,4 @@ If you are running Fedora within WSL 2 (Windows Subsystem for Linux):
 
 ---
 
-**Previous**: [Networking](04-fedora-networking.md) | **Next**: [Quick Reference](fedora-quick-reference.md)
+**Previous**: [Networking](04-fedora-networking.md) | **Next**: [Post Install Guide](06-fedora-44-post-install-guide.md)
