@@ -140,6 +140,28 @@ linux-commands-guide/
 
 7. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
 
+### 🐳 Standalone & Cross-Platform Guides
+
+1. **[Docker & Dockerfile Complete Guide](docs/docker-guide.md)**
+   - Concepts for absolute beginners (cargo ship analogy)
+   - Expert-level installation & configuration for Windows (WSL2), macOS, and Linux
+   - Dockerfile deep dive, layering, caching, and multi-stage builds
+   - Comprehensive learning & execution resources
+
+2. **[Kubernetes & YAML Manifest Complete Guide](docs/kubernetes-guide.md)**
+   - Concepts for absolute beginners (Harbor Master analogy)
+   - Expert-level installation & setup for Windows (WSL2), macOS, and Linux (Minikube, k3s, Kind)
+   - Production-grade manifest construction (Deployment, Service) and health probes
+   - Command continuation & execution differences on Windows CMD vs. PowerShell vs. Linux/macOS
+   - Curated learning & cluster management resources
+
+3. **[Data Science & ML Stack Complete Guide](docs/data-science-guide.md)**
+   - Concepts for absolute beginners (laboratory kitchen analogy)
+   - Map of the entire modern DS/ML tech stack (Polars, PyTorch, Hugging Face, Vector DBs, MLOps)
+   - Expert-level GPU acceleration setup (NVIDIA CUDA on Windows/WSL2/Linux & Apple Silicon MPS on macOS)
+   - Environment and package managers compared (venv, Mamba, Poetry)
+   - Execution control, background processes, and troubleshooting in Windows CMD, PowerShell, and Bash
+
 ## 🛠️ Scripts
 
 ### Available Scripts
@@ -191,6 +213,9 @@ sudo dnf upgrade --refresh -y
 
 ## 🗺️ Resources
 
+- [Docker & Dockerfile Complete Guide](docs/docker-guide.md) - Our detailed containerization guide
+- [Kubernetes & YAML Manifest Complete Guide](docs/kubernetes-guide.md) - Our detailed container orchestration guide
+- [Data Science & ML Stack Complete Guide](docs/data-science-guide.md) - Our detailed ML workflow setup guide
 - [Linux Roadmap](https://roadmap.sh/linux) - A structured roadmap to learn Linux
 - [Ubuntu Documentation](https://help.ubuntu.com/)
 - [Fedora Documentation](https://docs.fedoraproject.org/)
