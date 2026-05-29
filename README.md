@@ -34,6 +34,9 @@ This repository contains:
 linux-commands-guide/
 ├── README.md
 ├── docs/
+│   ├── docker-guide.md
+│   ├── kubernetes-guide.md
+│   ├── data-science-guide.md
 │   ├── ubuntu/
 │   │   ├── 01-beginner-commands.md
 │   │   ├── 02-intermediate-commands.md
