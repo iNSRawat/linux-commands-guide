@@ -1,6 +1,6 @@
 # Linux Commands Guide 🐧
 
-A comprehensive guide to Linux commands for **Ubuntu** and **Fedora**, organized by skill level and use case. Perfect for beginners learning Linux on WSL or native installations, and experienced users looking for quick reference.
+A comprehensive guide to Linux commands for **Ubuntu**, **Fedora**, and **Arch Linux**, organized by skill level and use case. Perfect for beginners learning Linux on WSL or native installations, and experienced users looking for quick reference.
 
 ## 📚 Table of Contents
 
@@ -45,14 +45,22 @@ linux-commands-guide/
 │   │   ├── 05-git-github-commands.md
 │   │   ├── 06-docker-commands.md
 │   │   └── quick-reference.md
-│   └── fedora/
-│       ├── 01-fedora-basics.md
-│       ├── 02-fedora-package-management.md
-│       ├── 03-fedora-system-services.md
-│       ├── 04-fedora-networking.md
-│       ├── 05-fedora-system-commands-guide.md
-│       ├── 06-fedora-44-post-install-guide.md
-│       └── fedora-quick-reference.md
+│   ├── fedora/
+│   │   ├── 01-fedora-basics.md
+│   │   ├── 02-fedora-package-management.md
+│   │   ├── 03-fedora-system-services.md
+│   │   ├── 04-fedora-networking.md
+│   │   ├── 05-fedora-system-commands-guide.md
+│   │   ├── 06-fedora-44-post-install-guide.md
+│   │   └── fedora-quick-reference.md
+│   └── arch/
+│       ├── 01-arch-basics.md
+│       ├── 02-arch-package-management.md
+│       ├── 03-arch-system-services.md
+│       ├── 04-arch-networking.md
+│       ├── 05-arch-installation-guide.md
+│       ├── 06-arch-post-install-guide.md
+│       └── arch-quick-reference.md
 ├── scripts/
 │   ├── setup-aliases.sh
 │   ├── install-ds-stack.sh
@@ -143,6 +151,39 @@ linux-commands-guide/
 
 7. **[Fedora Quick Reference](docs/fedora/fedora-quick-reference.md)**
 
+### ⚫ Arch Linux Commands
+
+1. **[Arch Linux Basics](docs/arch/01-arch-basics.md)**
+   - Navigation and basic command-line operations
+   - Common file operations, user management, and keyboard shortcuts
+
+2. **[Arch Package Management](docs/arch/02-arch-package-management.md)**
+   - Standard `pacman` update, install, and remove syntax
+   - AUR (Arch User Repository) and helper setup (`yay` and `paru`)
+
+3. **[Arch System Services](docs/arch/03-arch-system-services.md)**
+   - Managing services using `systemctl` (start/enable/status)
+   - Checking system logs with `journalctl`
+   - Bootloaders overview (systemd-boot and GRUB)
+
+4. **[Arch Networking](docs/arch/04-arch-networking.md)**
+   - WiFi connection setup using `iwctl`
+   - NetworkManager commands (`nmcli` and `nmtui`)
+   - Firewall protection (`ufw` installation and ruleset)
+   - OpenSSH server security configuration
+
+5. **[Arch Installation Guide](docs/arch/05-arch-installation-guide.md)**
+   - Bootable USB creation and HP BIOS boot configuration
+   - Connecting to Wi-Fi from the command-line install medium
+   - Using the guided installer script (`archinstall`)
+
+6. **[Arch Post-Install Guide](docs/arch/06-arch-post-install-guide.md)**
+   - Mirrorlist speed optimization using `reflector`
+   - Sound setup (PipeWire), Bluetooth, graphics drivers, and microcode
+   - System backup snapshots (Timeshift) and Pacman configurations
+
+7. **[Arch Quick Reference](docs/arch/arch-quick-reference.md)**
+
 ### 🐳 Standalone & Cross-Platform Guides
 
 1. **[Docker & Dockerfile Complete Guide](docs/docker-guide.md)**
@@ -199,7 +240,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This guide is perfect for:
 - Data science students using WSL2/Ubuntu or Fedora
 - Developers containerizing apps with Docker
-- System administrators managing Ubuntu/Fedora servers
+- System administrators managing Ubuntu/Fedora/Arch Linux servers
 - Anyone learning Linux command line from scratch
 
 ### Quick update commands
@@ -214,6 +255,13 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 sudo dnf upgrade --refresh -y
 ```
 
+**Arch Linux:**
+```bash
+sudo pacman -Syu    # Official repositories update
+# Or update both official repositories and AUR:
+yay -Syu
+```
+
 ## 🗺️ Resources
 
 - [Docker & Dockerfile Complete Guide](docs/docker-guide.md) - Our detailed containerization guide
@@ -222,6 +270,8 @@ sudo dnf upgrade --refresh -y
 - [Linux Roadmap](https://roadmap.sh/linux) - A structured roadmap to learn Linux
 - [Ubuntu Documentation](https://help.ubuntu.com/)
 - [Fedora Documentation](https://docs.fedoraproject.org/)
+- [Arch Wiki](https://wiki.archlinux.org/) - Comprehensive Arch Linux documentation
+- [Archinstall Documentation](https://archlinux.org/packages/extra/any/archinstall/)
 
 ## 📄 License
 
